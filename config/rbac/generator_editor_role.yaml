@@ -1,0 +1,24 @@
+# permissions for end users to edit Generators.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: Generator-editor-role
+rules:
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - Generators
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - Generators/status
+  verbs:
+  - get

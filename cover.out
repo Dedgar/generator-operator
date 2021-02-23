@@ -1,0 +1,15 @@
+mode: set
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:56.101,63.16 5 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:75.2,78.93 2 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:83.2,85.42 3 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:99.2,101.27 2 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:63.16,64.29 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:71.3,71.33 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:64.29,69.4 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:78.93,80.3 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:85.42,88.17 3 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:93.3,93.33 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:88.17,90.4 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:94.8,94.23 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:94.23,96.3 1 0
+github.com/dedgar/traffic-generator-operator/controllers/generator_controller.go:105.72,110.2 1 0

@@ -1,0 +1,7 @@
+apiVersion: managed.openshift.io/v1alpha1
+kind: Generator
+metadata:
+  name: Generator
+spec:
+  # Add fields here
+  foo: bar
