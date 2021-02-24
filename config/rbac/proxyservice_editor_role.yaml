@@ -1,0 +1,24 @@
+# permissions for end users to edit proxyservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: proxyservice-editor-role
+rules:
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - proxyservices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - proxyservices/status
+  verbs:
+  - get

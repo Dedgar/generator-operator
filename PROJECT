@@ -7,6 +7,14 @@ resources:
   group: managed
   kind: Generator
   version: v1alpha1
+- crdVersion: v1
+  group: managed
+  kind: Proxy
+  version: v1alpha1
+- crdVersion: v1
+  group: managed
+  kind: ProxyService
+  version: v1alpha1
 version: 3-alpha
 plugins:
   manifests.sdk.operatorframework.io/v2: {}

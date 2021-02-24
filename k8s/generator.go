@@ -40,7 +40,7 @@ func GeneratorDaemonSet(m *managedv1alpha1.Generator) *appsv1.DaemonSet {
 						},
 					},
 					Containers: []corev1.Container{{
-						Image: "quay.io/dedgar/generator:v0.0.1",
+						Image: "quay.io/dedgar/generator:v0.0.7",
 						Name:  "generator",
 						SecurityContext: &corev1.SecurityContext{
 							Privileged: &privileged,

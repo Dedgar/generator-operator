@@ -1,0 +1,20 @@
+# permissions for end users to view proxyservices.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: proxyservice-viewer-role
+rules:
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - proxyservices
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - proxyservices/status
+  verbs:
+  - get

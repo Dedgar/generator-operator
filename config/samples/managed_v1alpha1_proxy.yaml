@@ -1,7 +1,7 @@
 apiVersion: managed.openshift.io/v1alpha1
-kind: Generator
+kind: Proxy
 metadata:
-  name: generator
+  name: proxy
 spec:
   # Add fields here
   foo: bar
