@@ -74,10 +74,10 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 						}},
 					}},
 					Volumes: []corev1.Volume{{
-						Name: "Proxy-secrets",
+						Name: "proxy-secrets",
 						VolumeSource: corev1.VolumeSource{
 							Secret: &corev1.SecretVolumeSource{
-								SecretName: "Proxy-secrets",
+								SecretName: "proxy-secrets",
 							},
 						},
 					}, {
