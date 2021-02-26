@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	managedv1alpha1 "github.com/dedgar/traffic-generator-operator/api/v1alpha1"
+	managedv1alpha1 "github.com/dedgar/generator-operator/api/v1alpha1"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -33,7 +33,7 @@ func GeneratorDaemonSet(m *managedv1alpha1.Generator) *appsv1.DaemonSet {
 					NodeSelector: map[string]string{
 						"node-role.kubernetes.io/master": "",
 					},
-					// ServiceAccountName: "openshift-traffic-generator-operator",
+					// ServiceAccountName: "openshift-generator-operator",
 					Tolerations: []corev1.Toleration{
 						{
 							Operator: corev1.TolerationOpExists,

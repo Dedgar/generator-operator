@@ -1,7 +1,7 @@
 package k8s
 
 import (
-	managedv1alpha1 "github.com/dedgar/traffic-gen-operator/api/v1alpha1"
+	managedv1alpha1 "github.com/dedgar/generator-operator/api/v1alpha1"
 	appsv1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
@@ -34,7 +34,7 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 					NodeSelector: map[string]string{
 						"node-role.kubernetes.io/master": "",
 					},
-					// ServiceAccountName: "openshift-traffic-gen-operator",
+					// ServiceAccountName: "openshift-generator-operator",
 					Tolerations: []corev1.Toleration{
 						{
 							Operator: corev1.TolerationOpExists,
@@ -52,7 +52,7 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 							Value: "false",
 						}, {
 							Name:  "LOG_WRITER_URL",
-							Value: "http://Proxy.openshift-traffic-gen-operator.svc:8080/api/log",
+							Value: "http://Proxy.openshift-generator-operator.svc:8080/api/log",
 						}, {
 							Name:  "SCAN_LOG_FILE",
 							Value: "/host/var/log/openshift_managed_malware_scan.log",

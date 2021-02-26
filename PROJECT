@@ -1,7 +1,7 @@
 domain: openshift.io
 layout: go.kubebuilder.io/v3
-projectName: openshift-traffic-generator-operator
-repo: github.com/dedgar/traffic-generator-operator
+projectName: openshift-generator-operator
+repo: github.com/dedgar/generator-operator
 resources:
 - crdVersion: v1
   group: managed

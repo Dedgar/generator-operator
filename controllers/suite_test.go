@@ -30,7 +30,7 @@ import (
 	logf "sigs.k8s.io/controller-runtime/pkg/log"
 	"sigs.k8s.io/controller-runtime/pkg/log/zap"
 
-	managedv1alpha1 "github.com/dedgar/traffic-generator-operator/api/v1alpha1"
+	managedv1alpha1 "github.com/dedgar/generator-operator/api/v1alpha1"
 	// +kubebuilder:scaffold:imports
 )
 

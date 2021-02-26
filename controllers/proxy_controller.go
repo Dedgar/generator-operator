@@ -28,8 +28,8 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/reconcile"
 
-	managedv1alpha1 "github.com/dedgar/traffic-generator-operator/api/v1alpha1"
-	"github.com/dedgar/traffic-generator-operator/k8s"
+	managedv1alpha1 "github.com/dedgar/generator-operator/api/v1alpha1"
+	"github.com/dedgar/generator-operator/k8s"
 	appsv1 "k8s.io/api/apps/v1"
 )
 
