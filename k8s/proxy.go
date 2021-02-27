@@ -21,13 +21,13 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 		Spec: appsv1.DeploymentSpec{
 			Selector: &metav1.LabelSelector{
 				MatchLabels: map[string]string{
-					"name": "Proxy",
+					"name": "proxy",
 				},
 			},
 			Template: corev1.PodTemplateSpec{
 				ObjectMeta: metav1.ObjectMeta{
 					Labels: map[string]string{
-						"name": "Proxy",
+						"name": "proxy",
 					},
 				},
 				Spec: corev1.PodSpec{
@@ -41,8 +41,8 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 						},
 					},
 					Containers: []corev1.Container{{
-						Image: "quay.io/dedgar/pod-Proxy:v0.0.10",
-						Name:  "Proxy",
+						Image: "quay.io/dedgar/generator-proxy:v0.0.1",
+						Name:  "proxy",
 						SecurityContext: &corev1.SecurityContext{
 							Privileged: &privileged,
 							RunAsUser:  &runAsUser,
@@ -52,7 +52,7 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 							Value: "false",
 						}, {
 							Name:  "LOG_WRITER_URL",
-							Value: "http://Proxy.openshift-generator-operator.svc:8080/api/log",
+							Value: "http://proxy.openshift-generator-operator.svc:8080/api/log",
 						}, {
 							Name:  "SCAN_LOG_FILE",
 							Value: "/host/var/log/openshift_managed_malware_scan.log",
@@ -62,11 +62,11 @@ func ProxyDeployment(m *managedv1alpha1.Proxy) *appsv1.Deployment {
 						}},
 						Ports: []corev1.ContainerPort{{
 							ContainerPort: 8080,
-							Name:          "Proxy",
+							Name:          "proxy",
 						}},
 						Resources: corev1.ResourceRequirements{},
 						VolumeMounts: []corev1.VolumeMount{{
-							Name:      "Proxy-secrets",
+							Name:      "proxy-secrets",
 							MountPath: "/secrets",
 						}, {
 							Name:      "host-logs",
@@ -108,7 +108,7 @@ func ProxyService(m *managedv1alpha1.ProxyService) *corev1.Service {
 		},
 		Spec: corev1.ServiceSpec{
 			Selector: map[string]string{
-				"name": "Proxy",
+				"name": "proxy",
 			},
 			Ports: []corev1.ServicePort{{
 				Port:       8080,

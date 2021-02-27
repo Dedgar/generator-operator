@@ -6,20 +6,20 @@ metadata:
   annotations:
     generator-operator.kubebuilder.io/version: v0.4.1
   creationTimestamp: null
-  name: generators.managed.openshift.io
+  name: proxyservices.managed.openshift.io
 spec:
   group: managed.openshift.io
   names:
-    kind: Generator
-    listKind: GeneratorList
-    plural: generators
-    singular: generator
+    kind: ProxyService
+    listKind: ProxyServiceList
+    plural: proxyservices
+    singular: proxyservice
   scope: Namespaced
   versions:
   - name: v1alpha1
     schema:
       openAPIV3Schema:
-        description: Generator is the Schema for the Generators API
+        description: ProxyService is the Schema for the proxyservices API
         properties:
           apiVersion:
             description: 'APIVersion defines the versioned schema of this representation
@@ -34,15 +34,15 @@ spec:
           metadata:
             type: object
           spec:
-            description: GeneratorSpec defines the desired state of Generator
+            description: ProxyServiceSpec defines the desired state of ProxyService
             properties:
               foo:
-                description: Foo is an example field of Generator. Edit Generator_types.go
+                description: Foo is an example field of ProxyService. Edit ProxyService_types.go
                   to remove/update
                 type: string
             type: object
           status:
-            description: GeneratorStatus defines the observed state of Generator
+            description: ProxyServiceStatus defines the observed state of ProxyService
             type: object
         type: object
     served: true

@@ -106,6 +106,6 @@ func (r *ProxyServiceReconciler) Reconcile(ctx context.Context, req ctrl.Request
 func (r *ProxyServiceReconciler) SetupWithManager(mgr ctrl.Manager) error {
 	return ctrl.NewControllerManagedBy(mgr).
 		For(&managedv1alpha1.ProxyService{}).
-		Owns(&managedv1alpha1.Scanner{}).
+		Owns(&managedv1alpha1.ProxyService{}).
 		Complete(r)
 }

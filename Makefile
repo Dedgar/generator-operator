@@ -58,7 +58,7 @@ undeploy:
 	$(KUSTOMIZE) build config/default | kubectl delete -f -
 
 # Generate manifests e.g. CRD, RBAC etc.
-manifests: controllergenerator
+manifests: generator-operator
 	$(CONTROLLER_GEN) $(CRD_OPTIONS) rbac:roleName=manager-role webhook paths="./..." output:crd:artifacts:config=config/crd/bases
 
 # Run go fmt against code
@@ -70,7 +70,7 @@ vet:
 	go vet ./...
 
 # Generate code
-generate: controllergenerator
+generate: generator-operator
 	$(CONTROLLER_GEN) object:headerFile="hack/boilerplate.go.txt" paths="./..."
 
 # Build the docker image
@@ -81,10 +81,10 @@ docker-build: test
 docker-push:
 	docker push ${IMG}
 
-# Download controllergenerator locally if necessary
-CONTROLLER_GEN = $(shell pwd)/bin/controllergenerator
-controllergenerator:
-	$(call go-get-tool,$(CONTROLLER_GEN),sigs.k8s.io/controller-tools/cmd/controllergenerator@v0.4.1)
+# Download generator-operator locally if necessary
+CONTROLLER_GEN = $(shell pwd)/bin/generator-operator
+generator-operator:
+	$(call go-get-tool,$(CONTROLLER_GEN),sigs.k8s.io/controller-tools/cmd/generator-operator@v0.4.1)
 
 # Download kustomize locally if necessary
 KUSTOMIZE = $(shell pwd)/bin/kustomize

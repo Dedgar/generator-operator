@@ -38,3 +38,55 @@ rules:
   - get
   - patch
   - update
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - Proxys
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - Proxys/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - Proxys/status
+  verbs:
+  - get
+  - patch
+  - update
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - loggerservices
+  verbs:
+  - create
+  - delete
+  - get
+  - list
+  - patch
+  - update
+  - watch
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - loggerservices/finalizers
+  verbs:
+  - update
+- apiGroups:
+  - managed.openshift.io
+  resources:
+  - loggerservices/status
+  verbs:
+  - get
+  - patch
+  - update
